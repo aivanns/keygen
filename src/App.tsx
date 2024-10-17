@@ -1,8 +1,10 @@
-import './App.css';
+import Main from "./pages/Main";
+import init from "./utils/init";
 
 function App() {
+    init();
   return (
-    <></>
+    <Main />
   );
 }
 

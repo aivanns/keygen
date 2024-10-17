@@ -1,0 +1,44 @@
+.custom-modal .ant-modal-content {
+  @apply bg-color-3;
+}
+
+.custom-modal .ant-modal-header {
+  @apply bg-color-3 text-white;
+}
+
+.custom-modal .ant-modal-footer {
+  @apply bg-color-3;
+}
+
+.custom-modal .ant-modal-title {
+  @apply text-white;
+}
+
+.custom-modal .ant-modal-close-x {
+  @apply text-white;
+}
+
+.custom-modal .ant-modal-body {
+  @apply bg-color-3 text-white;
+}
+
+.custom-modal .ant-btn-primary {
+  @apply bg-color-2 text-white;
+}
+
+.custom-modal .ant-btn-primary:hover {
+  @apply bg-color-4 !important;
+}
+
+.custom-modal .ant-btn-default {
+  @apply bg-color-3 text-white;
+  @apply border-none;
+}
+
+.custom-modal .ant-btn-default:hover {
+  @apply bg-color-4 text-white !important;
+}
+
+.ant-btn-primary:hover {
+    @apply bg-color-5 !important;
+}
