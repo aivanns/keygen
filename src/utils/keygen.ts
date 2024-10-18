@@ -2,7 +2,7 @@ import sha1 from 'crypto-js/sha1';
 import sha256 from 'crypto-js/sha256';
 import sha3 from 'crypto-js/sha3';
 import { KeyItem } from '../types/Items';
-
+import { HashType } from '../shared/enums/table';
 function randomValue(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -36,13 +36,13 @@ export default async function generateKey(name: string, hash: string): Promise<v
     }
     let key: string;
     switch (hash) {
-        case 'sha1':
+        case HashType.SHA1:
             key = sha1(seed.join(' ')).toString();
             break;
-        case 'sha256':
+        case HashType.SHA256:
             key = sha256(seed.join(' ')).toString();
             break;
-        case 'sha3':
+        case HashType.SHA3:
             key = sha3(seed.join(' ')).toString();
             break;
         default:

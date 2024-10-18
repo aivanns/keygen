@@ -1,0 +1,7 @@
+.ant-table {
+    @apply rounded-b-lg !important;
+}
+
+.ant-table-footer {
+    @apply rounded-b-lg !important;
+}
