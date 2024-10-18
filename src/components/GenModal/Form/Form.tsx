@@ -2,13 +2,10 @@ import type { FormProps } from 'antd';
 import { Button, Form, Input, Select } from 'antd';
 import './Form.css';
 import generateKey from '../../../utils/keygen';
+import { FieldType } from '../../../types/Form';
+import { NAME_MAX_LENGTH, NAME_REQUIRED, HASH_REQUIRED } from '../../../shared/constants/messages';
 
 const { Option } = Select;
-
-type FieldType = {
-  name?: string;
-  hash?: string;
-};
 
 const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
   await generateKey(values.name!, values.hash!);
@@ -35,7 +32,7 @@ const GenForm: React.FC = () => {
     <Form.Item<FieldType>
       label="Name"
       name="name"
-      rules={[{ required: true, message: 'Please input name of key!' }, {max: 15, message: 'Name must be less than 15 characters'}]}
+      rules={[{ required: true, message:  NAME_REQUIRED}, {max: 15, message: NAME_MAX_LENGTH}]}
     >
       <Input placeholder='key-1'/>
     </Form.Item>
@@ -43,7 +40,7 @@ const GenForm: React.FC = () => {
     <Form.Item<FieldType>
       label="Hash type"
       name="hash"
-      rules={[{ required: true, message: 'Please select hash type!' }]}
+      rules={[{ required: true, message:  HASH_REQUIRED}]}
     >
       <Select
           placeholder="Hash type"

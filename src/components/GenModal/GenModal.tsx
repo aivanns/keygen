@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal} from 'antd';
 import './GenModal.css';
 import GenForm from './Form/Form';
+import { GENERATE_KEY } from '../../shared/constants/global';
 
 const GenModal: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -17,7 +18,7 @@ const GenModal: React.FC = () => {
         className="bg-color-3 px-4 py-2 rounded-md"
         onClick={showModal}
       >
-        Generate key
+        {GENERATE_KEY}
       </Button>
       <Modal
         title="Key generation"

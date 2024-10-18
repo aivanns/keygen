@@ -1,6 +1,6 @@
 import GenModal from "../components/GenModal/GenModal";
 import GenTable from "../components/GenTable/GenTable";
-
+import { APP_NAME } from "../shared/constants/global";
 export default function Main() {
 
     return (
@@ -8,7 +8,7 @@ export default function Main() {
             <div className="bg-color-2 w-[80vw] h-[90vh] text-white rounded-md">
                 <div className="flex justify-between items-center bg-color-4 w-full py-[1vh] rounded-t-md">
                     <div></div>
-                    <p className="text-xl">Key Generator</p>
+                    <p className="text-xl">{APP_NAME}</p>
                     <div className="mr-4">
                         <GenModal />
                     </div>

@@ -1,14 +1,7 @@
 import sha1 from 'crypto-js/sha1';
 import sha256 from 'crypto-js/sha256';
 import sha3 from 'crypto-js/sha3';
-
-interface KeyItem {
-    id: number;
-    name: string;
-    hash: string;
-    seed: string[];
-    key: string;
-}
+import { KeyItem } from '../types/Items';
 
 function randomValue(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
