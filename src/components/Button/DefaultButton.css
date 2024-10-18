@@ -1,0 +1,3 @@
+.custom-button .ant-btn-primary:hover {
+    @apply bg-color-4 !important;
+}

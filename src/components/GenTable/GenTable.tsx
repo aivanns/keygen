@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Input, Table, Tag, Pagination } from 'antd';
+import { Input, Table, Tag, Pagination, notification } from 'antd';
 import type { TableProps } from 'antd';
 import { KeyItem } from '../../types/Items';
 import { EGenTable, HashType } from '../../shared/enums/table';
 import './GenTable.css';
+import DefaultButton from '../Button/DefaultButton';
+import exportKeysToClipboard from '../../utils/export';
 
 const columns: TableProps<KeyItem>['columns'] = [
   {
@@ -54,16 +56,25 @@ const columns: TableProps<KeyItem>['columns'] = [
 const GenTable: React.FC = () => {
   const [keys, setKeys] = useState<KeyItem[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(9);
-
-  useEffect(() => {
-    const storedKeys = JSON.parse(localStorage.getItem('keys') || '[]');
-    setKeys(storedKeys);
-  }, []);
-
+  const [pageSize, setPageSize] = useState<number>(5);
+  const [api, contextHolder] = notification.useNotification();
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
   const currentData = keys.slice(startIndex, endIndex);
+
+  const openNotification = () => {
+    api.open({
+      message: 'Success!',
+      description:
+        'Copied to clipboard',
+      showProgress: true,
+    });
+  };
+
+  const handleExportKeys = async () => {
+    await exportKeysToClipboard();
+    openNotification();
+  }
 
   const handlePageChange = (page: number, size?: number) => {
     setCurrentPage(page);
@@ -72,15 +83,25 @@ const GenTable: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    const storedKeys = JSON.parse(localStorage.getItem('keys') || '[]');
+    setKeys(storedKeys);
+  }, []);
+
   return (
-    <Table<KeyItem>
-      className='custom-table'
+    <>
+      {contextHolder}
+      <Table<KeyItem>
+        className='custom-table'
       columns={columns}
       dataSource={currentData}
       pagination={false}
       footer={() => (
         <div className='flex justify-between items-center'>
-          <div>Total: {keys.length} key</div>
+          <div className='flex items-center gap-4'>
+            <div>Total: {keys.length} key</div>
+            <DefaultButton text='Export keys' onClick={handleExportKeys}/>
+          </div>
           <Pagination
             current={currentPage}
             pageSize={pageSize}
@@ -92,6 +113,7 @@ const GenTable: React.FC = () => {
         </div>
       )}
     />
+    </>
   );
 }
 
