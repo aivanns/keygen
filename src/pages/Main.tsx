@@ -9,7 +9,7 @@ export default function Main() {
             <div className="bg-color-2 w-[80vw] h-auto text-white rounded-md my-10">
                 <div className="flex justify-between items-center bg-color-4 w-full py-[1vh] rounded-t-md">
                     <div></div>
-                    <p className="text-xl">{APP_NAME}</p>
+                    <p className="text-xl ml-[115px]">{APP_NAME}</p>
                     <div className="mr-4">
                         <GenModal />
                     </div>
