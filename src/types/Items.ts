@@ -1,5 +1,5 @@
 export interface KeyItem {
-    id: number;
+    id?: number;
     name: string;
     hash: string;
     seed: string[];
