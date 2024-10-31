@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# 🔑 Key Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a key generation application developed using React, TypeScript, and Vite. The application supports Hot Module Replacement (HMR) and uses ESLint to ensure code quality.
 
-Currently, two official plugins are available:
+## ✨ Main Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **🔐 Key Generation**: The application allows generating keys using various hashing algorithms such as SHA-1, SHA-256, and SHA-3.
+- **🗂️ Key Management**: Generated keys are stored in `localStorage` and can be exported to the clipboard.
+- **🖥️ User Interface**: The application features a user-friendly interface using components from the Ant Design library.
+- **⚙️ Configurable Setup**: Supports extended ESLint configuration for strict type checking and code style enforcement.
 
-## Expanding the ESLint configuration
+## 🚀 Installation and Running
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Ensure you have Node.js installed.
+2. Clone the repository and navigate to the project directory.
+3. Install the dependencies:
 
-- Configure the top-level `parserOptions` property like this:
+   ```bash
+   npm install
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+4. Run the project in development mode:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+5. Open your browser and go to `http://localhost:5173`.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📜 Scripts
+
+- `npm run dev`: Run the project in development mode.
+- `npm run build`: Build the project for production.
+- `npm run lint`: Run ESLint to check the code.
+- `npm run preview`: Preview the built project.
+
+## 🛠️ Configuration
+
+The project uses the following configuration files:
+
+- `tsconfig.app.json`: TypeScript configuration for the application.
+- `tsconfig.node.json`: TypeScript configuration for Node.js.
+- `eslint.config.js`: ESLint configuration for code checking.
+
+## 📦 Dependencies
+
+The main dependencies of the project include:
+
+- `react`: A library for building user interfaces.
+- `react-dom`: A package for working with the DOM in React.
+- `antd`: UI components.
+- `crypto-js`: A library for working with cryptographic algorithms.
+
+## 🧑‍💻 Development
+
+For development, it is recommended to use a code editor with TypeScript and ESLint support, such as Visual Studio Code.
+
+## 📄 License
+
+This project is licensed under the MIT License.
