@@ -146,7 +146,7 @@ const GenTable: React.FC = () => {
             total={keys.length}
             onChange={handlePageChange}
             showSizeChanger
-            pageSizeOptions={['5', '10', '15', '20']}
+            pageSizeOptions={['5', '10', '15', '20', '30']}
           />
         </div>
       )}
