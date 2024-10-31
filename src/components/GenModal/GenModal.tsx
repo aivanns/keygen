@@ -3,6 +3,7 @@ import { Button, Modal} from 'antd';
 import './GenModal.css';
 import GenForm from './Form/Form';
 import { GENERATE_KEY } from '../../shared/constants/global';
+import { BUTTON_TEXT_GENERATE } from '../../shared/constants/messages';
 
 const GenModal: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -21,7 +22,7 @@ const GenModal: React.FC = () => {
         {GENERATE_KEY}
       </Button>
       <Modal
-        title="Key generation"
+        title={BUTTON_TEXT_GENERATE}
         centered
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
