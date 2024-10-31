@@ -5,3 +5,7 @@
 [title="Hash type"] {
     @apply text-white !important;
 }
+
+[title="Quantity"] {
+    @apply text-white !important;
+}

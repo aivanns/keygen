@@ -3,6 +3,7 @@ export enum EGenTable {
     HASH = 'hash',
     SEED = 'seed',
     KEY = 'key',
+    QUANTITY = 'quantity',
 }
 export enum HashType {
     SHA1 = 'sha1',
