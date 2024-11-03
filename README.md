@@ -53,8 +53,4 @@ The main dependencies of the project include:
 
 ## 🧑‍💻 Development
 
-For development, it is recommended to use a code editor with TypeScript and ESLint support, such as Visual Studio Code.
-
-## 📄 License
-
-This project is licensed under the MIT License.
+For development, it is recommended to use a code editor with TypeScript and ESLint support, such as Visual Studio Code
